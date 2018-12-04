@@ -1,0 +1,10 @@
+C:\Users\Ion\CqrsDDD\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\Ion\CqrsDDD\Restaurant\Restaurant\bin\Debug\Restaurant.exe
+C:\Users\Ion\CqrsDDD\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
+C:\Users\Ion\CqrsDDD\Restaurant\Restaurant\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ion\CqrsDDD\Restaurant\Restaurant\bin\Debug\nunit.framework.dll
+C:\Users\Ion\CqrsDDD\Restaurant\Restaurant\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ion\CqrsDDD\Restaurant\Restaurant\bin\Debug\nunit.framework.xml
+C:\Users\Ion\CqrsDDD\Restaurant\Restaurant\obj\Debug\Restaurant.csprojResolveAssemblyReference.cache
+C:\Users\Ion\CqrsDDD\Restaurant\Restaurant\obj\Debug\Restaurant.exe
+C:\Users\Ion\CqrsDDD\Restaurant\Restaurant\obj\Debug\Restaurant.pdb

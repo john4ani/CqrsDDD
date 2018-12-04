@@ -1,0 +1,8 @@
+C:\Users\Ion\CqrsDDD\Messages\Messages\bin\Debug\Messages.exe.config
+C:\Users\Ion\CqrsDDD\Messages\Messages\bin\Debug\Messages.exe
+C:\Users\Ion\CqrsDDD\Messages\Messages\bin\Debug\Messages.pdb
+C:\Users\Ion\CqrsDDD\Messages\Messages\bin\Debug\nunit.framework.dll
+C:\Users\Ion\CqrsDDD\Messages\Messages\bin\Debug\nunit.framework.xml
+C:\Users\Ion\CqrsDDD\Messages\Messages\obj\Debug\Messages.csprojResolveAssemblyReference.cache
+C:\Users\Ion\CqrsDDD\Messages\Messages\obj\Debug\Messages.exe
+C:\Users\Ion\CqrsDDD\Messages\Messages\obj\Debug\Messages.pdb

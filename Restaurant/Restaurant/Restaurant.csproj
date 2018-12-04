@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD6FAFD5-2DDB-41A4-BE8D-B62AAE0E709D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Restaurant</RootNamespace>
+    <AssemblyName>Restaurant</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.8.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActorsForTopicPubSub\AssistantManager.cs" />
+    <Compile Include="ActorsForTopicPubSub\Cashier.cs" />
+    <Compile Include="ActorsForTopicPubSub\Cook.cs" />
+    <Compile Include="ActorsForTopicPubSub\Waiter.cs" />
+    <Compile Include="Actors\AlarmClock.cs" />
+    <Compile Include="Actors\AssistantManager.cs" />
+    <Compile Include="Actors\Cashier.cs" />
+    <Compile Include="Actors\Cook.cs" />
+    <Compile Include="Actors\Monkey.cs" />
+    <Compile Include="Actors\Waiter.cs" />
+    <Compile Include="Commands\PriceOrder.cs" />
+    <Compile Include="Commands\TakePayment.cs" />
+    <Compile Include="Commands\CookFood.cs" />
+    <Compile Include="Events\OrderPriced.cs" />
+    <Compile Include="Events\OrderPaid.cs" />
+    <Compile Include="Events\FoodCoocked.cs" />
+    <Compile Include="Events\OrderPlaced.cs" />
+    <Compile Include="Events\RemaindMeSomething.cs" />
+    <Compile Include="IHandle.cs" />
+    <Compile Include="IHandleOrderWithQueue.cs" />
+    <Compile Include="IHandleOrder.cs" />
+    <Compile Include="IStartable.cs" />
+    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\OrderDocument.cs" />
+    <Compile Include="ModelTest\OrderDocumentTest.cs" />
+    <Compile Include="MoreFairDispatcher.cs" />
+    <None Include="Program .cs.NoPubSub" />
+    <None Include="Program.cs.NoGenerics" />
+    <Compile Include="ProcessManager\MidgetHouse.cs" />
+    <None Include="Program.cs.beforeMidget" />
+    <Compile Include="RoundRobinDispatcher.cs" />
+    <Compile Include="Multiplexor.cs" />
+    <Compile Include="OrderPrinter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreadedHandler.cs" />
+    <Compile Include="TopicBasedPubSub.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using Restaurant.Actors;
+
+namespace Restaurant
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var printer = new OrderPrinter();
+            var cashier = new Cashier(printer);
+            var am = new ThreadedHandler(new AssistantManager(cashier));
+            var cook1 = new ThreadedHandler(new Cook(am,"jim1"));
+            var cook2 = new ThreadedHandler(new Cook(am,"jim2"));
+            var cook3 = new ThreadedHandler(new Cook(am,"jim3"));
+            //var multiplexor = new Multiplexor(new List<IHandleOrder> {cook, new Cook(am,"bob")});
+            var dispatcher = new ThreadedHandler(new MoreFareDispatcher(new List<IHandleOrder> { cook1, cook2, cook3 }));
+            var waiter = new Waiter(dispatcher);
+
+            cook1.Start();
+            cook2.Start();
+            cook3.Start();
+            am.Start();
+            dispatcher.Start();
+
+            for (int i = 0;i<100;i++)
+            {
+                var guid = Guid.NewGuid();
+                waiter.PlaceOrder(guid);
+            }
+            while (true)
+            {
+                Console.WriteLine("Waiting for payments..");
+                Console.WriteLine("AM queue deep : " + am.QueueDeep);
+                Console.WriteLine("C1 queue deep : " + cook1.QueueDeep);
+                Console.WriteLine("C2 queue deep : " + cook2.QueueDeep);
+                Console.WriteLine("C3 queue deep : " + cook3.QueueDeep);
+                Console.WriteLine("Dispatcher queue deep : " + dispatcher.QueueDeep);
+                
+                cashier.UnpaiedOrders.ForEach(o=>cashier.Pay(o.Id));
+                Thread.Sleep(100);
+            }
+            Console.ReadKey();
+        }
+    }
+}
